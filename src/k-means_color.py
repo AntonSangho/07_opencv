@@ -7,7 +7,8 @@
 import numpy as np
 import cv2
 
-K = 16 # 군집화 개수
+#K = 16 # 군집화 개수
+K = 8 # 군집화 개수
 img = cv2.imread('../img/taekwonv1.jpg')
 data = img.reshape((-1, 3)).astype(np.float32) 
 # 데이터 평균을 구할때 수소점 이하값을 가질 수있으므로 변환
@@ -18,7 +19,6 @@ criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
 ret, label, center = cv2.kmeans(data, K, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
 
 # 중심값을 정수형으로 변환 
-
 center = np.uint8(center)
 print(center)
 
