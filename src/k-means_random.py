@@ -10,6 +10,12 @@ data = np.vstack((a,b)).astype(np.float32)
 # 중지 요건 ---④
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
 # 평균 클러스터링 적용 ---⑤
+# data : 처리 대상 데이터 
+# K : 원하는 묶음 개수
+# 결과 데이터 
+# 반복 종료 조건 
+# 매번 다른 초기 레이블로 실행할 횟수 
+# 초기 중앙점 
 ret,label,center=cv2.kmeans(data,2,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
 # label에 따라 결과 분류 ---⑥
 red = data[label.ravel()==0]
