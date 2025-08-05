@@ -1,3 +1,5 @@
+# mnist 모듈을 이용해서 MNIST 손글씨 숫자를 10개의 그룹으로 분류해보기
+
 import cv2, numpy as np
 import matplotlib.pyplot as plt
 import mnist
